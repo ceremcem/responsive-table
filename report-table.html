@@ -13,7 +13,7 @@
     font-size: 14px;
   }
 
-  /* 🔑 Rows use a fixed 60-slot table layout */
+  /* 🔑 Outer rows = 60-slot grid */
   .kv-row {
     display: grid;
     grid-template-columns: repeat(60, 1fr);
@@ -47,37 +47,72 @@
     border-bottom: 2px solid #ccc;
   }
 
-  /* ✅ Utility system */
-  [class*="kv-"][class*="-wide"] {
-    grid-column: span var(--span, 1);
-  }
+  /* ✅ Utility widths (1–60) */
+  .kv-1-wide { grid-column: span 1; }
+  .kv-2-wide { grid-column: span 2; }
+  .kv-3-wide { grid-column: span 3; }
+  .kv-4-wide { grid-column: span 4; }
+  .kv-5-wide { grid-column: span 5; }
+  .kv-6-wide { grid-column: span 6; }
+  .kv-7-wide { grid-column: span 7; }
+  .kv-8-wide { grid-column: span 8; }
+  .kv-9-wide { grid-column: span 9; }
+  .kv-10-wide { grid-column: span 10; }
+  .kv-11-wide { grid-column: span 11; }
+  .kv-12-wide { grid-column: span 12; }
+  .kv-13-wide { grid-column: span 13; }
+  .kv-14-wide { grid-column: span 14; }
+  .kv-15-wide { grid-column: span 15; }
+  .kv-16-wide { grid-column: span 16; }
+  .kv-17-wide { grid-column: span 17; }
+  .kv-18-wide { grid-column: span 18; }
+  .kv-19-wide { grid-column: span 19; }
+  .kv-20-wide { grid-column: span 20; }
+  .kv-21-wide { grid-column: span 21; }
+  .kv-22-wide { grid-column: span 22; }
+  .kv-23-wide { grid-column: span 23; }
+  .kv-24-wide { grid-column: span 24; }
+  .kv-25-wide { grid-column: span 25; }
+  .kv-26-wide { grid-column: span 26; }
+  .kv-27-wide { grid-column: span 27; }
+  .kv-28-wide { grid-column: span 28; }
+  .kv-29-wide { grid-column: span 29; }
+  .kv-30-wide { grid-column: span 30; }
+  .kv-31-wide { grid-column: span 31; }
+  .kv-32-wide { grid-column: span 32; }
+  .kv-33-wide { grid-column: span 33; }
+  .kv-34-wide { grid-column: span 34; }
+  .kv-35-wide { grid-column: span 35; }
+  .kv-36-wide { grid-column: span 36; }
+  .kv-37-wide { grid-column: span 37; }
+  .kv-38-wide { grid-column: span 38; }
+  .kv-39-wide { grid-column: span 39; }
+  .kv-40-wide { grid-column: span 40; }
+  .kv-41-wide { grid-column: span 41; }
+  .kv-42-wide { grid-column: span 42; }
+  .kv-43-wide { grid-column: span 43; }
+  .kv-44-wide { grid-column: span 44; }
+  .kv-45-wide { grid-column: span 45; }
+  .kv-46-wide { grid-column: span 46; }
+  .kv-47-wide { grid-column: span 47; }
+  .kv-48-wide { grid-column: span 48; }
+  .kv-49-wide { grid-column: span 49; }
+  .kv-50-wide { grid-column: span 50; }
+  .kv-51-wide { grid-column: span 51; }
+  .kv-52-wide { grid-column: span 52; }
+  .kv-53-wide { grid-column: span 53; }
+  .kv-54-wide { grid-column: span 54; }
+  .kv-55-wide { grid-column: span 55; }
+  .kv-56-wide { grid-column: span 56; }
+  .kv-57-wide { grid-column: span 57; }
+  .kv-58-wide { grid-column: span 58; }
+  .kv-59-wide { grid-column: span 59; }
+  .kv-60-wide { grid-column: span 60; }
 
-  /* All 60 widths */
-  .kv-1-wide { --span: 1; }   .kv-2-wide { --span: 2; }   .kv-3-wide { --span: 3; }
-  .kv-4-wide { --span: 4; }   .kv-5-wide { --span: 5; }   .kv-6-wide { --span: 6; }
-  .kv-7-wide { --span: 7; }   .kv-8-wide { --span: 8; }   .kv-9-wide { --span: 9; }
-  .kv-10-wide { --span: 10; } .kv-11-wide { --span: 11; } .kv-12-wide { --span: 12; }
-  .kv-13-wide { --span: 13; } .kv-14-wide { --span: 14; } .kv-15-wide { --span: 15; }
-  .kv-16-wide { --span: 16; } .kv-17-wide { --span: 17; } .kv-18-wide { --span: 18; }
-  .kv-19-wide { --span: 19; } .kv-20-wide { --span: 20; } .kv-21-wide { --span: 21; }
-  .kv-22-wide { --span: 22; } .kv-23-wide { --span: 23; } .kv-24-wide { --span: 24; }
-  .kv-25-wide { --span: 25; } .kv-26-wide { --span: 26; } .kv-27-wide { --span: 27; }
-  .kv-28-wide { --span: 28; } .kv-29-wide { --span: 29; } .kv-30-wide { --span: 30; }
-  .kv-31-wide { --span: 31; } .kv-32-wide { --span: 32; } .kv-33-wide { --span: 33; }
-  .kv-34-wide { --span: 34; } .kv-35-wide { --span: 35; } .kv-36-wide { --span: 36; }
-  .kv-37-wide { --span: 37; } .kv-38-wide { --span: 38; } .kv-39-wide { --span: 39; }
-  .kv-40-wide { --span: 40; } .kv-41-wide { --span: 41; } .kv-42-wide { --span: 42; }
-  .kv-43-wide { --span: 43; } .kv-44-wide { --span: 44; } .kv-45-wide { --span: 45; }
-  .kv-46-wide { --span: 46; } .kv-47-wide { --span: 47; } .kv-48-wide { --span: 48; }
-  .kv-49-wide { --span: 49; } .kv-50-wide { --span: 50; } .kv-51-wide { --span: 51; }
-  .kv-52-wide { --span: 52; } .kv-53-wide { --span: 53; } .kv-54-wide { --span: 54; }
-  .kv-55-wide { --span: 55; } .kv-56-wide { --span: 56; } .kv-57-wide { --span: 57; }
-  .kv-58-wide { --span: 58; } .kv-59-wide { --span: 59; } .kv-60-wide { --span: 60; }
-
-  /* 🔑 Nested subtable (also fixed 60-wide grid) */
+  /* ✅ Nested subtable = consistent 2-column grid */
   .kv-subtable {
     display: grid;
-    grid-template-columns: repeat(60, 1fr);
+    grid-template-columns: 10fr 20fr; /* match outer: key 10, value 20 */
     width: 100%;
   }
   .kv-subtable .kv-cell {
@@ -85,15 +120,22 @@
     padding: 4px 6px;
   }
 
-  /* ✅ Responsive collapse for small screens */
+  /* Responsive collapse */
   @media (max-width: 768px) {
     .kv-row,
     .kv-subtable {
       grid-template-columns: 1fr;
     }
+
     .kv-cell {
       border-right: none;
     }
+
+    .kv-key,
+    .kv-value {
+      grid-column: 1 / -1;
+    }
+
     .kv-value {
       padding-left: 10px;
     }
@@ -109,17 +151,17 @@
     <div class="kv-cell kv-60-wide kv-title">My Report</div>
   </div>
 
-  <!-- Row 1 -->
+  <!-- Row 1: Report ID + nested Inspector/Supervisor -->
   <div class="kv-row">
     <div class="kv-cell kv-key kv-10-wide">Report ID</div>
     <div class="kv-cell kv-value kv-20-wide">12345</div>
     <div class="kv-cell kv-30-wide" style="padding:0;">
       <div class="kv-subtable">
-        <div class="kv-cell kv-key kv-10-wide">Inspector</div>
-        <div class="kv-cell kv-value kv-50-wide">John Doe</div>
-        <div class="kv-cell kv-key kv-10-wide">Supervisor</div>
-        <div class="kv-cell kv-value kv-50-wide">
-          Jane Smith with a very long name that should wrap correctly
+        <div class="kv-cell kv-key">Inspector</div>
+        <div class="kv-cell kv-value">John Doe</div>
+        <div class="kv-cell kv-key">Supervisor</div>
+        <div class="kv-cell kv-value">
+          Jane Smith with a very very very long name that should wrap correctly
         </div>
       </div>
     </div>
