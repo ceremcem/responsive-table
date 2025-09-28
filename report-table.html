@@ -7,22 +7,24 @@
   .kv-table {
     border: 1px solid #ccc;
     border-radius: 6px;
-    overflow: hidden;
-    max-width: 900px;
+    max-width: 1200px;
     margin: 20px auto;
     font-family: Arial, sans-serif;
     font-size: 14px;
   }
 
+  /* 🔑 Rows use a fixed 60-slot table layout */
   .kv-row {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr 2fr; /* 2 key-value pairs per row */
+    grid-template-columns: repeat(60, 1fr);
     border-bottom: 1px solid #eee;
   }
 
   .kv-cell {
     padding: 8px 10px;
     border-right: 1px solid #eee;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   .kv-key {
@@ -35,43 +37,64 @@
     text-align: left;
   }
 
-  /* Nested sub-table inside a cell */
+  .kv-title {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    background: #e6f2ff;
+    padding: 12px;
+    border-bottom: 2px solid #ccc;
+  }
+
+  /* ✅ Utility system */
+  [class*="kv-"][class*="-wide"] {
+    grid-column: span var(--span, 1);
+  }
+
+  /* All 60 widths */
+  .kv-1-wide { --span: 1; }   .kv-2-wide { --span: 2; }   .kv-3-wide { --span: 3; }
+  .kv-4-wide { --span: 4; }   .kv-5-wide { --span: 5; }   .kv-6-wide { --span: 6; }
+  .kv-7-wide { --span: 7; }   .kv-8-wide { --span: 8; }   .kv-9-wide { --span: 9; }
+  .kv-10-wide { --span: 10; } .kv-11-wide { --span: 11; } .kv-12-wide { --span: 12; }
+  .kv-13-wide { --span: 13; } .kv-14-wide { --span: 14; } .kv-15-wide { --span: 15; }
+  .kv-16-wide { --span: 16; } .kv-17-wide { --span: 17; } .kv-18-wide { --span: 18; }
+  .kv-19-wide { --span: 19; } .kv-20-wide { --span: 20; } .kv-21-wide { --span: 21; }
+  .kv-22-wide { --span: 22; } .kv-23-wide { --span: 23; } .kv-24-wide { --span: 24; }
+  .kv-25-wide { --span: 25; } .kv-26-wide { --span: 26; } .kv-27-wide { --span: 27; }
+  .kv-28-wide { --span: 28; } .kv-29-wide { --span: 29; } .kv-30-wide { --span: 30; }
+  .kv-31-wide { --span: 31; } .kv-32-wide { --span: 32; } .kv-33-wide { --span: 33; }
+  .kv-34-wide { --span: 34; } .kv-35-wide { --span: 35; } .kv-36-wide { --span: 36; }
+  .kv-37-wide { --span: 37; } .kv-38-wide { --span: 38; } .kv-39-wide { --span: 39; }
+  .kv-40-wide { --span: 40; } .kv-41-wide { --span: 41; } .kv-42-wide { --span: 42; }
+  .kv-43-wide { --span: 43; } .kv-44-wide { --span: 44; } .kv-45-wide { --span: 45; }
+  .kv-46-wide { --span: 46; } .kv-47-wide { --span: 47; } .kv-48-wide { --span: 48; }
+  .kv-49-wide { --span: 49; } .kv-50-wide { --span: 50; } .kv-51-wide { --span: 51; }
+  .kv-52-wide { --span: 52; } .kv-53-wide { --span: 53; } .kv-54-wide { --span: 54; }
+  .kv-55-wide { --span: 55; } .kv-56-wide { --span: 56; } .kv-57-wide { --span: 57; }
+  .kv-58-wide { --span: 58; } .kv-59-wide { --span: 59; } .kv-60-wide { --span: 60; }
+
+  /* 🔑 Nested subtable (also fixed 60-wide grid) */
   .kv-subtable {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 2px;
+    grid-template-columns: repeat(60, 1fr);
+    width: 100%;
   }
   .kv-subtable .kv-cell {
     border: none;
     padding: 4px 6px;
   }
 
-  /* Remove right border from last cell in a row */
-  .kv-row > .kv-cell:last-child {
-    border-right: none;
-  }
-
-  /* Responsive: stack key + value pairs vertically */
+  /* ✅ Responsive collapse for small screens */
   @media (max-width: 768px) {
-    .kv-row {
-      grid-template-columns: 1fr; /* single column */
-    }
-    .kv-key {
-      font-weight: bold;
-      padding-bottom: 2px;
-    }
-    .kv-value {
-      padding-left: 10px;
-      padding-top: 0;
-      padding-bottom: 8px;
+    .kv-row,
+    .kv-subtable {
+      grid-template-columns: 1fr;
     }
     .kv-cell {
       border-right: none;
     }
-    .kv-subtable {
-      grid-template-columns: 1fr; /* stack inside cell too */
-    }
-    .kv-subtable .kv-value {
+    .kv-value {
       padding-left: 10px;
     }
   }
@@ -81,34 +104,43 @@
 
 <div class="kv-table">
 
+  <!-- Title Row -->
+  <div class="kv-row">
+    <div class="kv-cell kv-60-wide kv-title">My Report</div>
+  </div>
+
   <!-- Row 1 -->
   <div class="kv-row">
-    <div class="kv-cell kv-key">Report ID</div>
-    <div class="kv-cell kv-value">12345</div>
-    <div class="kv-cell" style="grid-column: span 2; padding: 0;">
+    <div class="kv-cell kv-key kv-10-wide">Report ID</div>
+    <div class="kv-cell kv-value kv-20-wide">12345</div>
+    <div class="kv-cell kv-30-wide" style="padding:0;">
       <div class="kv-subtable">
-        <div class="kv-cell kv-key">Inspector</div>
-        <div class="kv-cell kv-value">John Doe</div>
-        <div class="kv-cell kv-key">Supervisor</div>
-        <div class="kv-cell kv-value">Jane Smith</div>
+        <div class="kv-cell kv-key kv-10-wide">Inspector</div>
+        <div class="kv-cell kv-value kv-50-wide">John Doe</div>
+        <div class="kv-cell kv-key kv-10-wide">Supervisor</div>
+        <div class="kv-cell kv-value kv-50-wide">
+          Jane Smith with a very long name that should wrap correctly
+        </div>
       </div>
     </div>
   </div>
 
   <!-- Row 2 -->
   <div class="kv-row">
-    <div class="kv-cell kv-key">Date</div>
-    <div class="kv-cell kv-value">2025-09-26</div>
-    <div class="kv-cell kv-key">Status</div>
-    <div class="kv-cell kv-value">Approved</div>
+    <div class="kv-cell kv-key kv-10-wide">Date</div>
+    <div class="kv-cell kv-value kv-20-wide">2025-09-26</div>
+    <div class="kv-cell kv-key kv-10-wide">Status</div>
+    <div class="kv-cell kv-value kv-20-wide">Approved</div>
   </div>
 
   <!-- Row 3 -->
   <div class="kv-row">
-    <div class="kv-cell kv-key">Location</div>
-    <div class="kv-cell kv-value">Istanbul</div>
-    <div class="kv-cell kv-key">Department</div>
-    <div class="kv-cell kv-value">Electrical</div>
+    <div class="kv-cell kv-key kv-15-wide">Location</div>
+    <div class="kv-cell kv-value kv-15-wide">Istanbul</div>
+    <div class="kv-cell kv-key kv-15-wide">Department</div>
+    <div class="kv-cell kv-value kv-15-wide">
+      Electrical with a description so long it will wrap naturally
+    </div>
   </div>
 
 </div>
