@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  .kv-table {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    overflow: hidden;
+    max-width: 900px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+  }
+
+  .kv-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 2fr; /* 2 key-value pairs per row */
+    border-bottom: 1px solid #eee;
+  }
+
+  .kv-cell {
+    padding: 8px 10px;
+    border-right: 1px solid #eee;
+  }
+
+  .kv-key {
+    font-weight: bold;
+    text-align: left;
+    background: #f9f9f9;
+  }
+
+  .kv-value {
+    text-align: left;
+  }
+
+  /* Remove right border from last cell in a row */
+  .kv-row > .kv-cell:last-child {
+    border-right: none;
+  }
+
+  /* Responsive: stack key + value pairs vertically */
+  @media (max-width: 768px) {
+    .kv-row {
+      grid-template-columns: 1fr; /* single column */
+    }
+    .kv-key {
+      font-weight: bold;
+      padding-bottom: 2px;
+    }
+    .kv-value {
+      padding-left: 10px;
+      padding-top: 0;
+      padding-bottom: 8px;
+    }
+    .kv-cell {
+      border-right: none;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="kv-table">
+
+  <!-- Row 1 -->
+  <div class="kv-row">
+    <div class="kv-cell kv-key">Report ID</div>
+    <div class="kv-cell kv-value">12345</div>
+    <div class="kv-cell kv-key">Inspector</div>
+    <div class="kv-cell kv-value">John Doe</div>
+  </div>
+
+  <!-- Row 2 -->
+  <div class="kv-row">
+    <div class="kv-cell kv-key">Date</div>
+    <div class="kv-cell kv-value">2025-09-26</div>
+    <div class="kv-cell kv-key">Status</div>
+    <div class="kv-cell kv-value">Approved</div>
+  </div>
+
+  <!-- Row 3 -->
+  <div class="kv-row">
+    <div class="kv-cell kv-key">Location</div>
+    <div class="kv-cell kv-value">Istanbul</div>
+    <div class="kv-cell kv-key">Department</div>
+    <div class="kv-cell kv-value">Electrical</div>
+  </div>
+
+</div>
+
+</body>
+</html>
