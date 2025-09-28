@@ -35,6 +35,17 @@
     text-align: left;
   }
 
+  /* Nested sub-table inside a cell */
+  .kv-subtable {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2px;
+  }
+  .kv-subtable .kv-cell {
+    border: none;
+    padding: 4px 6px;
+  }
+
   /* Remove right border from last cell in a row */
   .kv-row > .kv-cell:last-child {
     border-right: none;
@@ -57,6 +68,12 @@
     .kv-cell {
       border-right: none;
     }
+    .kv-subtable {
+      grid-template-columns: 1fr; /* stack inside cell too */
+    }
+    .kv-subtable .kv-value {
+      padding-left: 10px;
+    }
   }
 </style>
 </head>
@@ -68,8 +85,14 @@
   <div class="kv-row">
     <div class="kv-cell kv-key">Report ID</div>
     <div class="kv-cell kv-value">12345</div>
-    <div class="kv-cell kv-key">Inspector</div>
-    <div class="kv-cell kv-value">John Doe</div>
+    <div class="kv-cell" style="grid-column: span 2; padding: 0;">
+      <div class="kv-subtable">
+        <div class="kv-cell kv-key">Inspector</div>
+        <div class="kv-cell kv-value">John Doe</div>
+        <div class="kv-cell kv-key">Supervisor</div>
+        <div class="kv-cell kv-value">Jane Smith</div>
+      </div>
+    </div>
   </div>
 
   <!-- Row 2 -->
