@@ -8,5 +8,4 @@ Written by ChatGPT.
 
 ### Mobile Mode
 
-<img width="500" height="501" alt="image" src="https://github.com/user-attachments/assets/6b0557bf-c659-449b-ba3b-a599fd53f1d8" />
-
+<img width="679" height="495" alt="image" src="https://github.com/user-attachments/assets/ac0c0755-428e-4eed-a889-4657ce49e1c8" />
