@@ -205,27 +205,40 @@
   .kv-sub-60-wide { grid-column: span 60; }
 
   /* === Responsive collapse === */
-  @media (max-width: 768px) {
-    .kv-row,
-    .kv-subtable .kv-row {
-      grid-template-columns: 1fr;
-    }
-
-    .kv-key,
-    .kv-value {
-      grid-column: 1 / -1;
-    }
-
-    .kv-value {
-      padding-left: 20px !important;
-    }
+@media (max-width: 768px) {
+  .kv-row,
+  .kv-subtable .kv-row {
+    grid-template-columns: 1fr;
   }
+
+  .kv-key,
+  .kv-value {
+    grid-column: 1 / -1;
+  }
+
+  /* 🔑 Key fields: remove bottom + right borders */
+  .kv-key {
+    border-bottom: none !important;
+    border-right: none !important;
+  }
+
+  /* 🔑 Value fields: keep bottom border, remove right border */
+  .kv-value {
+    padding-left: 20px !important;
+    border-right: none !important;
+    border-bottom: 1px solid #000 !important;
+  }
+
+  /* ✅ Remove right borders for all cells in mobile */
+  .kv-cell {
+    border-right: none !important;
+  }
+}
 </style>
 </head>
 <body>
 
 <div class="kv-table">
-
   <!-- Title Row -->
   <div class="kv-row">
     <div class="kv-cell kv-60-wide kv-title">My Report</div>
@@ -268,7 +281,6 @@
       Electrical with a description so long it will wrap naturally
     </div>
   </div>
-
 </div>
 
 </body>
