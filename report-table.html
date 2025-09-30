@@ -171,6 +171,14 @@
   .kv-cell {
     border-right: none !important;
   }
+
+  .kv-row > .kv-cell:has(> .kv-subtable) {
+    border-bottom: 0;
+  }
+
+  .kv-table > .kv-row:last-child > .kv-cell.kv-value:last-child {
+    border-bottom: 0 !important;
+  }
 }
 </style>
 </head>
