@@ -142,6 +142,10 @@
     border-bottom: none;
   }
 
+  .kv-cell:has(> .kv-subtable) {
+    padding: 0; /* or whatever you need */
+  }
+
   /* === Responsive collapse === */
 @media (max-width: 768px) {
   .kv-row,
@@ -194,7 +198,7 @@
   <div class="kv-row">
     <div class="kv-cell kv-key kv-10-wide">Report ID</div>
     <div class="kv-cell kv-value kv-20-wide">12345</div>
-    <div class="kv-cell kv-30-wide" style="padding:0;">
+    <div class="kv-cell kv-30-wide">
       <div class="kv-subtable">
         <div class="kv-row">
           <div class="kv-cell kv-key kv-20-wide">Inspector</div>
