@@ -8,13 +8,15 @@ Written by ChatGPT.
 
 ### Mobile Mode
 
-<img width="679" height="495" alt="image" src="https://github.com/user-attachments/assets/ac0c0755-428e-4eed-a889-4657ce49e1c8" />
+<img width="497" height="496" alt="image" src="https://github.com/user-attachments/assets/3e2ca9d1-92d4-4664-941d-5c094fcf7037" />
+
 
 
 ## Key features
 
 * Full width is divided into a 60 column grid. This lets developer fine tune the width of fields.
-   <img width="551" height="173" alt="image" src="https://github.com/user-attachments/assets/953f8f0e-0113-4b84-b11f-14ea63fd79ad" />
+   <img width="411" height="228" alt="image" src="https://github.com/user-attachments/assets/e1ec2a76-6e88-4381-9cbe-358408ccb7d3" />
+
 
 * Supports subtables. `keyfield`s in `subtable`s can be aligned to the other `keyfield`s outside that `subtable`: 
 
