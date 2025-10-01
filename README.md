@@ -10,7 +10,7 @@ Written by ChatGPT.
 
 So you should hide the "very complex table" and prepare a mobile version by yourself.
 
-<img width="683" height="1051" alt="image" src="https://github.com/user-attachments/assets/d3e598b3-6fd4-4b24-879f-d9384499475b" />
+<img width="683" height="663" alt="image" src="https://github.com/user-attachments/assets/45af19a4-d565-4953-b069-ddde9c2e1895" />
 
 
 
