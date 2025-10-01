@@ -4,11 +4,14 @@ Written by ChatGPT.
 
 ### Desktop Mode
 
-<img width="1235" height="311" alt="image" src="https://github.com/user-attachments/assets/a0e01c4e-4552-4b13-8fb2-900462b3636c" />
+<img width="1233" height="421" alt="image" src="https://github.com/user-attachments/assets/ed18e6d7-0555-4372-8cf3-d4ac544a560a" />
 
 ### Mobile Mode
 
-<img width="683" height="649" alt="image" src="https://github.com/user-attachments/assets/2a29fb19-f3fc-45d8-a830-25713e33c0f1" />
+So you should hide the "very complex table" and prepare a mobile version by yourself.
+
+<img width="683" height="1051" alt="image" src="https://github.com/user-attachments/assets/d3e598b3-6fd4-4b24-879f-d9384499475b" />
+
 
 
 
