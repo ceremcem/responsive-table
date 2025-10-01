@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kv Table with Equal Height Subtable</title>
 <style>
   .kv-table {
     border: 1px solid #000;
@@ -16,6 +17,7 @@
   .kv-row {
     display: grid;
     grid-template-columns: repeat(60, 1fr);
+    align-items: stretch; /* stretch all cells in a row */
   }
 
   .kv-cell {
@@ -119,8 +121,9 @@
 
   /* === Subtable === */
   .kv-subtable {
-    display: block;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* fill parent cell */
   }
 
   .kv-subtable .kv-row {
@@ -134,12 +137,20 @@
     padding: 4px 6px;
   }
 
+  /* Remove extra borders */
   .kv-subtable .kv-row > .kv-cell:last-child {
     border-right: none;
   }
+  .kv-subtable > .kv-row:last-child > .kv-cell { 
+    border-bottom: none; 
+}
 
-  .kv-subtable > .kv-row:last-child > .kv-cell {
-    border-bottom: none;
+  /* 🔑 Force last subtable row to stretch */
+  .kv-subtable .kv-row:last-child {
+    flex: 1; /* consume remaining space */
+    display: grid;
+    grid-template-columns: repeat(60, 1fr);
+    align-items: stretch;
   }
 
   .kv-cell:has(> .kv-subtable) {
@@ -183,7 +194,6 @@
   .kv-table > .kv-row:last-child > .kv-cell.kv-value:last-child {
     border-bottom: 0 !important;
   }
-}
 </style>
 </head>
 <body>
@@ -214,26 +224,29 @@
     </div>
   </div>
 
-    <div class="kv-row">
+  <!-- Row 2: Document ID + subtable -->
+  <div class="kv-row">
     <div class="kv-cell kv-key kv-10-wide">Document ID</div>
-    <div class="kv-cell kv-value kv-5-wide">This is a very long value in order to make this cell taller</div>
+    <div class="kv-cell kv-value kv-5-wide">
+      This is a very long value in order to make this cell taller
+    </div>
     <div class="kv-cell kv-45-wide">
       <div class="kv-subtable">
         <div class="kv-row">
           <div class="kv-cell kv-key kv-20-wide">foo</div>
-          <div class="kv-cell kv-value kv-40-wide">...</div>
+          <div class="kv-cell kv-value kv-40-wide">short value</div>
         </div>
         <div class="kv-row">
           <div class="kv-cell kv-key kv-20-wide">bar</div>
           <div class="kv-cell kv-value kv-40-wide">
-            ...
+            this row stretches down to match the tall neighbor
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Row 2 -->
+  <!-- Row 3 -->
   <div class="kv-row">
     <div class="kv-cell kv-key kv-10-wide">Date</div>
     <div class="kv-cell kv-value kv-20-wide">2025-09-26</div>
@@ -241,7 +254,7 @@
     <div class="kv-cell kv-value kv-20-wide">Approved</div>
   </div>
 
-  <!-- Row 3 -->
+  <!-- Row 4 -->
   <div class="kv-row">
     <div class="kv-cell kv-key kv-15-wide">Location</div>
     <div class="kv-cell kv-value kv-15-wide">Istanbul</div>
