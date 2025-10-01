@@ -4,11 +4,12 @@ Written by ChatGPT.
 
 ### Desktop Mode
 
-<img width="1257" height="286" alt="image" src="https://github.com/user-attachments/assets/c89614e2-c733-4d89-8f2b-517ad804a829" />
+<img width="1235" height="311" alt="image" src="https://github.com/user-attachments/assets/a0e01c4e-4552-4b13-8fb2-900462b3636c" />
 
 ### Mobile Mode
 
-<img width="497" height="496" alt="image" src="https://github.com/user-attachments/assets/3e2ca9d1-92d4-4664-941d-5c094fcf7037" />
+<img width="683" height="649" alt="image" src="https://github.com/user-attachments/assets/2a29fb19-f3fc-45d8-a830-25713e33c0f1" />
+
 
 
 
