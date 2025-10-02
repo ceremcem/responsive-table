@@ -8,7 +8,8 @@ Written by ChatGPT.
 
 ### Mobile Mode
 
-So you should hide the "very complex table" and prepare a mobile version by yourself.
+You should hide any mobile incompatible layout with `kv-row kv-only-desktop` and and prepare a mobile version by yourself, display by `kv-row kv-only-mobile`:
+
 
 <img width="683" height="663" alt="image" src="https://github.com/user-attachments/assets/45af19a4-d565-4953-b069-ddde9c2e1895" />
 
